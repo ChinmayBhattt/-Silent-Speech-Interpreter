@@ -55,7 +55,8 @@ function initialize() {
 function attachEventListeners() {
     // Navigation buttons
     startBtn.addEventListener('click', showInterpreter);
-    tutorialBtn.addEventListener('click', showTutorial);
+    tutorialBtn.addEventListener('click', () => window.location.href = 'tutorial.html');
+    helpBtn.addEventListener('click', () => window.location.href = 'help.html');
     backToLandingBtn.addEventListener('click', showLanding);
     tutorialBackBtn.addEventListener('click', showLanding);
     
@@ -148,6 +149,7 @@ function showInterpreter() {
     startVideo();
 }
 
+// Leaving this function for compatibility but it's no longer used directly from button clicks
 function showTutorial() {
     tutorialSection.classList.add('active-section');
     tutorialSection.classList.remove('hidden-section');

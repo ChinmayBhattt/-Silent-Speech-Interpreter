@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - Silent Speech Interpreter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .tutorial-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .tutorial-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .tutorial-header h1 {
+            color: var(--primary-color);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .tutorial-header p {
+            font-size: 18px;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .tutorial-steps {
+            margin-top: 50px;
+        }
+        
+        .step-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom-right-radius: 15px;
+        }
+        
+        .step-content {
+            padding-left: 40px;
+            padding-top: 20px;
+        }
+        
+        .step-content h2 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .step-image-text {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .step-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .step-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .step-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tips-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(var(--primary-rgb), 0.1);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        .tips-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .tips-container ul {
+            margin-left: 20px;
+        }
+        
+        .tips-container li {
+            margin-bottom: 5px;
+        }
+        
+        .video-container {
+            max-width: 700px;
+            margin: 30px auto;
+        }
+        
+        .video-container h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .step-image-text {
+                flex-direction: column-reverse;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-comment-dots"></i>
+                <h1>Silent Speech Interpreter</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="tutorial.html" class="active">Tutorial</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="tutorial-content">
+                <div class="tutorial-header">
+                    <h1>How to Use Silent Speech Interpreter</h1>
+                    <p>A step-by-step guide to help you get started with using the Silent Speech Interpreter for effective communication.</p>
+                </div>
+                
+                <div class="video-container">
+                    <h2>Quick Start Video Tutorial</h2>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Silent Speech Interpreter Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+                <div class="tutorial-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h2>Getting Started</h2>
+                            <div class="step-image-text">
+                                <div class="step-text">
+                                    <p>To begin using the Silent Speech Interpreter, follow these simple steps:</p>
+                                    <ol>
+                                        <li>Open the application by clicking the "Start Interpreter" button on the home page.</li>
+                                        <li>Grant camera access when prompted. The system requires access to your camera to detect lip movements and facial expressions.</li>
+                                        <li>Adjust your position to ensure your face is clearly visible in the camera frame.</li>
+                                        <li>Make sure you're in a well-lit environment with minimal background noise.</li>
+                                    </ol>
+                                    
+                                    <div class="tips-container">
+                                        <h3>Tips for Optimal Setup</h3>
+                                        <ul>
+                                            <li>Face the camera directly with your entire face visible.</li>
+                                            <li>Ensure good lighting that illuminates your face evenly without harsh shadows.</li>
+                                            <li>Minimize background distractions and noise.</li>
+                                            <li>Position yourself about 1-2 feet (30-60 cm) away from the camera.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="step-image">
+                                    <img src="assets/images/tutorial/step1-setup.jpg" alt="Setting up Silent Speech Interpreter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h2>Speaking Silently</h2>
+                            <div class="step-image-text">
+                                <div class="step-text">
+                                    <p>Once the system is running, you can begin communicating by articulating words silently:</p>
+                                    <ol>
+                                        <li>Speak clearly but without producing sound, making sure your lip movements are deliberate.</li>
+                                        <li>Start with simple words or short phrases to get comfortable with the system.</li>
+                                        <li>Pace yourself - speak slower than normal to give the system time to process your lip movements.</li>
+                                        <li>Observe the confidence meter to gauge how well the system is interpreting your speech.</li>
+                                    </ol>
+                                    
+                                    <div class="tips-container">
+                                        <h3>Tips for Clear Articulation</h3>
+                                        <ul>
+                                            <li>Exaggerate your lip movements slightly for better recognition.</li>
+                                            <li>Keep your head stable while speaking.</li>
+                                            <li>Avoid covering your mouth with your hands or other objects.</li>
+                                            <li>Try to maintain a neutral facial expression initially, then incorporate emotions as you get more comfortable.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="step-image">
+                                    <img src="assets/images/tutorial/step2-speaking.jpg" alt="Speaking silently">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h2>Using Hand Gestures</h2>
+                            <div class="step-image-text">
+                                <div class="step-text">
+                                    <p>The Silent Speech Interpreter can also recognize hand gestures for quick communication:</p>
+                                    <ol>
+                                        <li>Hold your hand in front of the camera within the frame.</li>
+                                        <li>Perform one of the recognized gestures clearly and deliberately.</li>
+                                        <li>Hold the gesture for 1-2 seconds to ensure it's captured.</li>
+                                        <li>The system will convert recognized gestures into predefined phrases.</li>
+                                    </ol>
+                                    
+                                    <div class="tips-container">
+                                        <h3>Common Gesture Shortcuts</h3>
+                                        <ul>
+                                            <li><strong>Thumbs Up:</strong> "Yes, please" or "I agree"</li>
+                                            <li><strong>Thumbs Down:</strong> "No, thank you" or "I disagree"</li>
+                                            <li><strong>Open Palm:</strong> "Help" or "I need assistance"</li>
+                                            <li><strong>OK Sign:</strong> "I'm fine" or "Everything is good"</li>
+                                            <li><strong>Pointing Up:</strong> "One moment please" or "Wait"</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="step-image">
+                                    <img src="assets/images/tutorial/step3-gestures.jpg" alt="Using hand gestures">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h2>Customizing Settings</h2>
+                            <div class="step-image-text">
+                                <div class="step-text">
+                                    <p>Personalize your Silent Speech Interpreter experience with these settings:</p>
+                                    <ol>
+                                        <li>Click the gear icon (⚙️) in the interpreter view to open settings.</li>
+                                        <li>Adjust voice settings to choose between male, female, or neutral voices.</li>
+                                        <li>Use the speech rate slider to make the spoken output faster or slower.</li>
+                                        <li>Choose a display theme that suits your preference (light, dark, or high contrast).</li>
+                                        <li>Adjust camera settings if you have multiple cameras or need to change resolution.</li>
+                                    </ol>
+                                    
+                                    <div class="tips-container">
+                                        <h3>Setting Recommendations</h3>
+                                        <ul>
+                                            <li>Start with the default voice and gradually adjust to find your preference.</li>
+                                            <li>If you're in a bright environment, the light theme may be easier to see; in low light, use the dark theme.</li>
+                                            <li>High contrast theme is recommended for users with visual impairments.</li>
+                                            <li>Lower camera resolution may improve performance on older devices.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="step-image">
+                                    <img src="assets/images/tutorial/step4-settings.jpg" alt="Customizing settings">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h2>Training Custom Phrases</h2>
+                            <div class="step-image-text">
+                                <div class="step-text">
+                                    <p>Improve accuracy by training the system on your unique way of speaking:</p>
+                                    <ol>
+                                        <li>In settings, navigate to the "Training" tab.</li>
+                                        <li>Click "Add New Phrase" and type the phrase you want to teach the system.</li>
+                                        <li>Follow the on-screen instructions to record yourself silently articulating the phrase multiple times.</li>
+                                        <li>Submit the training data and wait for the system to process it.</li>
+                                        <li>Test your custom phrase to see if recognition has improved.</li>
+                                    </ol>
+                                    
+                                    <div class="tips-container">
+                                        <h3>Training Tips</h3>
+                                        <ul>
+                                            <li>Start with short, commonly used phrases that are important to you.</li>
+                                            <li>Record in the same lighting conditions you typically use the system in.</li>
+                                            <li>Train at least 10 samples per phrase for optimal recognition.</li>
+                                            <li>Re-train periodically to improve accuracy as the system learns your patterns.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="step-image">
+                                    <img src="assets/images/tutorial/step5-training.jpg" alt="Training custom phrases">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h2>Ready to Start Communicating?</h2>
+                    <p>Now that you understand how to use the Silent Speech Interpreter, why not try it out?</p>
+                    <a href="index.html" class="cta-button">Launch Silent Speech Interpreter <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2023 Silent Speech Interpreter</p>
+                    <p>Empowering communication for everyone</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://x.com/chinmaybhattt" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/chinmaybhattt/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/chinmaybhattt" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/chinmaybhattt" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-credits">
+                <p>Thanks For Coming, Created By Chinmay Bhatt</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

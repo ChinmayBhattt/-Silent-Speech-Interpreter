@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - Silent Speech Interpreter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .help-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .help-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .help-header h1 {
+            color: var(--primary-color);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .help-header p {
+            font-size: 18px;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .help-section {
+            margin-bottom: 50px;
+        }
+        
+        .help-section h2 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .faq-container {
+            margin-top: 30px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(var(--primary-rgb), 0.05);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-color);
+        }
+        
+        .faq-answer p {
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer ul, .faq-answer ol {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 5px;
+        }
+        
+        .troubleshooting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .troubleshooting-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .troubleshooting-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .troubleshooting-card .icon {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-method {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .contact-method i {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .contact-method h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .contact-method p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-method a {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-method a:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .resources-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+        
+        .resources-list li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+        
+        .resources-list i {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+        
+        .resources-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .resources-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .resources-list span {
+            color: var(--text-color);
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-methods {
+                flex-direction: column;
+            }
+            
+            .troubleshooting-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-comment-dots"></i>
+                <h1>Silent Speech Interpreter</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="help.html" class="active">Help</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="help-content">
+                <div class="help-header">
+                    <h1>Help & Support</h1>
+                    <p>Find answers to common questions, troubleshooting tips, and ways to get additional support for the Silent Speech Interpreter.</p>
+                </div>
+                
+                <div class="help-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How accurate is the Silent Speech Interpreter?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The accuracy of the Silent Speech Interpreter varies based on several factors:</p>
+                                <ul>
+                                    <li>With clear articulation in good lighting conditions, accuracy typically ranges from 85-95%.</li>
+                                    <li>Accuracy improves as the system learns your specific lip movements and speaking patterns.</li>
+                                    <li>Common phrases and words have higher recognition rates compared to rare or technical terms.</li>
+                                    <li>Environmental factors like lighting, camera quality, and face positioning can affect performance.</li>
+                                </ul>
+                                <p>For best results, we recommend training the system with custom phrases that you use frequently.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Is my data private and secure?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, your privacy is a top priority:</p>
+                                <ul>
+                                    <li>All processing happens locally on your device - no video or audio data is sent to our servers.</li>
+                                    <li>Your custom training data is stored only on your device.</li>
+                                    <li>The app works offline once downloaded, with no internet connection required.</li>
+                                    <li>We do not collect personal data beyond basic anonymous usage statistics (which you can opt out of in settings).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Which devices are compatible with Silent Speech Interpreter?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Silent Speech Interpreter works on a wide range of devices:</p>
+                                <ul>
+                                    <li>Windows PCs (Windows 10 or newer)</li>
+                                    <li>Mac computers (macOS 10.14 or newer)</li>
+                                    <li>iOS devices (iPhone and iPad with iOS 14 or newer)</li>
+                                    <li>Android devices (Android 9.0 or newer)</li>
+                                    <li>Modern web browsers (Chrome, Firefox, Safari, Edge)</li>
+                                </ul>
+                                <p>For optimal performance, we recommend a device with a good front-facing camera and a relatively recent processor. The system can run on older devices but may experience slower processing speeds.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can I use Silent Speech Interpreter in noisy environments?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! One of the key advantages of Silent Speech Interpreter is that it works well in noisy environments. Since the system interprets lip movements and facial expressions rather than audio, background noise doesn't affect its performance.</p>
+                                <p>This makes it particularly useful in:</p>
+                                <ul>
+                                    <li>Crowded public spaces</li>
+                                    <li>Loud industrial environments</li>
+                                    <li>Concerts and sporting events</li>
+                                    <li>Any situation where speaking aloud would be difficult or inappropriate</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I train the system for better accuracy?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>To train the Silent Speech Interpreter for improved accuracy:</p>
+                                <ol>
+                                    <li>Go to Settings and select the "Training" tab.</li>
+                                    <li>Click "Add New Phrase" and enter a phrase you commonly use.</li>
+                                    <li>Follow the on-screen prompts to record yourself silently speaking the phrase multiple times (at least 10 recordings are recommended).</li>
+                                    <li>Submit the recordings and allow the system to process them.</li>
+                                    <li>Test the newly trained phrase to confirm improved recognition.</li>
+                                </ol>
+                                <p>For best results, train phrases in the same lighting conditions and position that you typically use the system in. Regular training with phrases you use often will significantly improve overall accuracy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="help-section">
+                    <h2>Troubleshooting</h2>
+                    <p>Encountering issues with Silent Speech Interpreter? Here are solutions to common problems:</p>
+                    
+                    <div class="troubleshooting-grid">
+                        <div class="troubleshooting-card">
+                            <div class="icon"><i class="fas fa-camera-slash"></i></div>
+                            <h3>Camera Not Working</h3>
+                            <ol>
+                                <li>Check that your browser has permission to access your camera</li>
+                                <li>Ensure no other applications are using your camera</li>
+                                <li>Restart your browser or device</li>
+                                <li>Try selecting a different camera in Settings if available</li>
+                                <li>Update your browser to the latest version</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="troubleshooting-card">
+                            <div class="icon"><i class="fas fa-low-vision"></i></div>
+                            <h3>Poor Recognition Accuracy</h3>
+                            <ol>
+                                <li>Improve lighting conditions - ensure your face is well-lit</li>
+                                <li>Position yourself directly facing the camera</li>
+                                <li>Speak more slowly and articulate clearly</li>
+                                <li>Train the system with phrases you use frequently</li>
+                                <li>Check for and remove obstructions (hair, mask, etc.)</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="troubleshooting-card">
+                            <div class="icon"><i class="fas fa-volume-mute"></i></div>
+                            <h3>No Audio Output</h3>
+                            <ol>
+                                <li>Check your device's volume settings</li>
+                                <li>Ensure audio is not muted in the application</li>
+                                <li>Test audio with another application</li>
+                                <li>Restart the application</li>
+                                <li>Try using headphones or different speakers</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="troubleshooting-card">
+                            <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <h3>Application Freezes or Crashes</h3>
+                            <ol>
+                                <li>Close other resource-intensive applications</li>
+                                <li>Refresh the page or restart the application</li>
+                                <li>Clear your browser cache and cookies</li>
+                                <li>Try reducing the video resolution in Settings</li>
+                                <li>Update your device's operating system</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="help-section">
+                    <h2>Contact Support</h2>
+                    <p>Need additional help? Our support team is ready to assist you through multiple channels:</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email Support</h3>
+                            <p>Send us a detailed description of your issue for personalized assistance.</p>
+                            <a href="mailto:support@silentspeech.app">Contact via Email</a>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-comments"></i>
+                            <h3>Live Chat</h3>
+                            <p>Chat with our support team in real-time during business hours.</p>
+                            <a href="#" id="start-chat-btn">Start Live Chat</a>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-users"></i>
+                            <h3>Community Forum</h3>
+                            <p>Connect with other users and share solutions to common issues.</p>
+                            <a href="https://community.silentspeech.app">Visit Forum</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="help-section">
+                    <h2>Additional Resources</h2>
+                    <p>Explore these resources to learn more about using Silent Speech Interpreter:</p>
+                    
+                    <ul class="resources-list">
+                        <li>
+                            <i class="fas fa-book"></i>
+                            <a href="#">Complete User Guide</a>
+                            <span>Comprehensive documentation of all features and capabilities</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-video"></i>
+                            <a href="#">Video Tutorials</a>
+                            <span>Step-by-step video guides for beginners and advanced users</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <a href="#">Advanced Training Techniques</a>
+                            <span>Learn how to optimize the system for your specific needs</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-newspaper"></i>
+                            <a href="#">Blog & Updates</a>
+                            <span>Latest news, tips, and upcoming features</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-laptop-code"></i>
+                            <a href="https://github.com/chinmaybhattt/silent-speech-interpreter">Developer Resources</a>
+                            <span>API documentation and integration guides</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2023 Silent Speech Interpreter</p>
+                    <p>Empowering communication for everyone</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://x.com/chinmaybhattt" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/chinmaybhattt/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/chinmaybhattt" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/chinmaybhattt" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-credits">
+                <p>Thanks For Coming, Created By Chinmay Bhatt</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer visibility
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+        
+        // Initialize - hide all answers initially
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+        
+        // Live chat button functionality (placeholder)
+        document.getElementById('start-chat-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Live chat feature coming soon! Please use email support for now.');
+        });
+    </script>
+</body>
+</html> 

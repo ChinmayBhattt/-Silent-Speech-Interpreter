@@ -2,7 +2,7 @@
 
 A modern, responsive, and accessible frontend UI for a Silent Speech Interpreter designed for mute individuals. This application uses AI to interpret lip movements and facial expressions, converting them into text and audio.
 
-## Features
+## Features 
 
 - **Real-time Lip Reading**: Captures lip movements through the camera feed and interprets them as text.
 - **Speech Synthesis**: Converts interpreted text into spoken audio.

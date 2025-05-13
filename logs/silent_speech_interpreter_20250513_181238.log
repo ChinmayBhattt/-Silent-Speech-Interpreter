@@ -1,0 +1,6 @@
+2025-05-13 18:12:38,127 - silent_speech_interpreter - INFO - Logging to file: logs/silent_speech_interpreter_20250513_181238.log
+2025-05-13 18:12:38,127 - silent_speech_interpreter - INFO - Initializing Silent Speech Interpreter...
+2025-05-13 18:12:49,562 - silent_speech_interpreter - INFO - Silent Speech Interpreter initialized successfully.
+2025-05-13 18:12:49,563 - silent_speech_interpreter - INFO - Starting Silent Speech Interpreter...
+2025-05-13 18:12:58,142 - silent_speech_interpreter - ERROR - Error in Silent Speech Interpreter: Unknown C++ exception from OpenCV code
+2025-05-13 18:12:58,653 - silent_speech_interpreter - INFO - Silent Speech Interpreter stopped.

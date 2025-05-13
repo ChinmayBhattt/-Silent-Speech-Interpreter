@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silent Speech Interpreter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-comment-dots"></i>
+                <h1>Silent Speech Interpreter</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#tutorial">Tutorial</a></li>
+                    <li><a href="#help">Help</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Landing Section -->
+            <section id="landing" class="active-section">
+                <div class="landing-content">
+                    <h2>Empowering Communication Beyond Words</h2>
+                    <p>An AI-powered solution that interprets silent speech in real-time for mute individuals</p>
+                    <div class="cta-buttons">
+                        <button id="start-btn" class="primary-btn pulse">Start Interpreter <i class="fas fa-play"></i></button>
+                        <button id="tutorial-btn" class="secondary-btn">Tutorial <i class="fas fa-book-open"></i></button>
+                        <button id="help-btn" class="secondary-btn">Help <i class="fas fa-question-circle"></i></button>
+                    </div>
+                </div>
+                <div class="landing-image">
+                    <div class="image-container">
+                        <img src="assets/images/speech-illustration.svg" alt="Speech Interpretation Illustration">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interpreter Section -->
+            <section id="interpreter" class="hidden-section">
+                <div class="interpreter-container">
+                    <div class="video-container">
+                        <div class="video-feed">
+                            <video id="video-feed" autoplay muted playsinline></video>
+                            <div class="lip-tracking-overlay" id="lip-tracking-overlay"></div>
+                            <div class="processing-indicator">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="video-controls">
+                            <button id="toggle-video" class="control-btn"><i class="fas fa-video"></i></button>
+                            <button id="toggle-audio" class="control-btn"><i class="fas fa-volume-up"></i></button>
+                            <button id="settings" class="control-btn"><i class="fas fa-cog"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="output-container">
+                        <div class="output-header">
+                            <h3>Speech Output</h3>
+                            <div class="output-actions">
+                                <button id="copy-text" class="icon-btn" title="Copy text"><i class="fas fa-copy"></i></button>
+                                <button id="clear-text" class="icon-btn" title="Clear text"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="transcription-box" id="transcription-box">
+                            <p class="placeholder">Your interpreted speech will appear here...</p>
+                        </div>
+                        <div class="speech-controls">
+                            <button id="play-speech" class="primary-btn">
+                                <i class="fas fa-volume-up"></i> Play Speech
+                            </button>
+                            <div class="volume-control">
+                                <i class="fas fa-volume-down"></i>
+                                <input type="range" id="volume-slider" min="0" max="100" value="80">
+                                <i class="fas fa-volume-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expression-feedback">
+                    <h3>Facial Expression Recognition</h3>
+                    <div class="expression-indicators">
+                        <div class="expression-item">
+                            <div class="expression-icon" id="lips-icon">
+                                <i class="fas fa-lips"></i>
+                            </div>
+                            <div class="expression-label">Lips</div>
+                            <div class="confidence-bar">
+                                <div class="confidence-level" id="lips-confidence" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="expression-item">
+                            <div class="expression-icon" id="face-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="expression-label">Face</div>
+                            <div class="confidence-bar">
+                                <div class="confidence-level" id="face-confidence" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="expression-item">
+                            <div class="expression-icon" id="context-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="expression-label">Context</div>
+                            <div class="confidence-bar">
+                                <div class="confidence-level" id="context-confidence" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="back-to-landing" class="text-btn"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            </section>
+
+            <!-- Tutorial Section -->
+            <section id="tutorial-section" class="hidden-section">
+                <h2>How to Use the Silent Speech Interpreter</h2>
+                <div class="tutorial-steps">
+                    <div class="tutorial-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Position Yourself</h3>
+                            <p>Make sure your face is clearly visible in the camera with good lighting.</p>
+                            <div class="step-image">
+                                <img src="assets/images/position.svg" alt="Position yourself">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Start Speaking Silently</h3>
+                            <p>Articulate words clearly with your lips as if you were speaking normally.</p>
+                            <div class="step-image">
+                                <img src="assets/images/speaking.svg" alt="Silent speaking">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Review Output</h3>
+                            <p>Check the transcription box to see your interpreted speech.</p>
+                            <div class="step-image">
+                                <img src="assets/images/review.svg" alt="Review output">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Play Audio</h3>
+                            <p>Click the 'Play Speech' button to have your text spoken aloud.</p>
+                            <div class="step-image">
+                                <img src="assets/images/play.svg" alt="Play audio">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="tutorial-back" class="text-btn"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2023 Silent Speech Interpreter</p>
+                    <p>Empowering communication for everyone</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-credits">
+                <p>Powered by advanced AI lip reading and speech synthesis technology</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal for Settings -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-group">
+                    <h4>Camera Settings</h4>
+                    <div class="setting-item">
+                        <label for="camera-select">Select Camera</label>
+                        <select id="camera-select">
+                            <option value="default">Default Camera</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="resolution-select">Video Resolution</label>
+                        <select id="resolution-select">
+                            <option value="720p">HD (720p)</option>
+                            <option value="480p">SD (480p)</option>
+                            <option value="360p">Low (360p)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="settings-group">
+                    <h4>Voice Settings</h4>
+                    <div class="setting-item">
+                        <label for="voice-select">Voice Type</label>
+                        <select id="voice-select">
+                            <option value="female">Female Voice</option>
+                            <option value="male">Male Voice</option>
+                            <option value="neutral">Neutral Voice</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="speech-rate">Speech Rate</label>
+                        <input type="range" id="speech-rate" min="0.5" max="2" step="0.1" value="1">
+                        <span id="speech-rate-value">1.0x</span>
+                    </div>
+                </div>
+                <div class="settings-group">
+                    <h4>Interface Settings</h4>
+                    <div class="setting-item">
+                        <label for="theme-select">Theme</label>
+                        <select id="theme-select">
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                            <option value="high-contrast">High Contrast</option>
+                        </select>
+                    </div>
+                    <div class="setting-item checkbox-setting">
+                        <input type="checkbox" id="auto-clear" checked>
+                        <label for="auto-clear">Auto-clear transcription after 2 minutes</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-settings" class="primary-btn">Save Settings</button>
+                <button id="reset-settings" class="secondary-btn">Reset to Default</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,38 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        .pulse { animation: pulse 2s ease-in-out infinite; }
+    </style>
+    
+    <!-- Camera Shape -->
+    <rect x="50" y="20" width="200" height="160" rx="10" fill="#E9EFFF" stroke="#4776E6" stroke-width="2"/>
+    <rect x="60" y="30" width="180" height="120" rx="5" fill="#4776E6" opacity="0.1"/>
+    
+    <!-- Face Outline Guide -->
+    <circle cx="150" cy="90" r="50" stroke="#8E54E9" stroke-width="2" stroke-dasharray="5,5" class="pulse"/>
+    
+    <!-- Simple Face -->
+    <circle cx="150" cy="90" r="40" fill="#F5F8FF" stroke="#4776E6" stroke-width="2"/>
+    <circle cx="135" cy="80" r="5" fill="#4776E6"/>
+    <circle cx="165" cy="80" r="5" fill="#4776E6"/>
+    <path d="M130 100 Q 150 120, 170 100" stroke="#4776E6" stroke-width="2" fill="none"/>
+    
+    <!-- Light Indicators -->
+    <circle cx="80" cy="170" r="5" fill="#4776E6"/>
+    <circle cx="100" cy="170" r="5" fill="#6A82FB"/>
+    <circle cx="120" cy="170" r="5" fill="#8E54E9"/>
+    
+    <!-- Guidance Arrows -->
+    <path d="M230 60 L 260 60 L 250 50 M 260 60 L 250 70" stroke="#4776E6" stroke-width="2"/>
+    <path d="M230 120 L 260 120 L 250 110 M 260 120 L 250 130" stroke="#4776E6" stroke-width="2"/>
+    <path d="M70 60 L 40 60 L 50 50 M 40 60 L 50 70" stroke="#4776E6" stroke-width="2"/>
+    <path d="M70 120 L 40 120 L 50 110 M 40 120 L 50 130" stroke="#4776E6" stroke-width="2"/>
+    
+    <!-- Light Beam -->
+    <path d="M150 20 L 150 5 M 145 10 L 155 10" stroke="#6A82FB" stroke-width="2"/>
+    <circle cx="150" cy="20" r="10" fill="#F5F8FF" stroke="#6A82FB" stroke-width="2" class="pulse"/>
+</svg> 

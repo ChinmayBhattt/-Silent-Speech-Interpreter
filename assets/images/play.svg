@@ -1,0 +1,66 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        @keyframes wave {
+            0% { height: 10px; }
+            50% { height: 30px; }
+            100% { height: 10px; }
+        }
+        @keyframes expand {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .pulse { animation: pulse 2s ease-in-out infinite; }
+        .wave1 { animation: wave 1s ease-in-out infinite; }
+        .wave2 { animation: wave 1s ease-in-out infinite 0.2s; }
+        .wave3 { animation: wave 1s ease-in-out infinite 0.4s; }
+        .wave4 { animation: wave 1s ease-in-out infinite 0.6s; }
+        .wave5 { animation: wave 1s ease-in-out infinite 0.8s; }
+        .expand { animation: expand 2s ease-in-out infinite; }
+    </style>
+    
+    <!-- Audio Control Panel -->
+    <rect x="50" y="70" width="200" height="60" rx="10" fill="#F5F8FF" stroke="#4776E6" stroke-width="2"/>
+    
+    <!-- Play Button -->
+    <circle cx="90" cy="100" r="20" fill="#4776E6" class="expand"/>
+    <path d="M85 90 L 85 110 L 100 100 Z" fill="white"/>
+    
+    <!-- Audio Waves -->
+    <g transform="translate(130, 100)" class="pulse">
+        <rect x="0" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave1"/>
+        <rect x="10" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave2"/>
+        <rect x="20" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave3"/>
+        <rect x="30" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave4"/>
+        <rect x="40" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave5"/>
+        <rect x="50" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave1"/>
+        <rect x="60" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave2"/>
+        <rect x="70" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave3"/>
+        <rect x="80" y="-15" width="4" height="30" rx="2" fill="#6A82FB" class="wave4"/>
+    </g>
+    
+    <!-- Sound Waves Emitting -->
+    <path d="M50 100 Q 25 70, 25 100 T 0 100" stroke="#8E54E9" stroke-width="1.5" stroke-dasharray="2,2" class="pulse"/>
+    <path d="M50 100 Q 20 100, 20 130 T 0 130" stroke="#8E54E9" stroke-width="1.5" stroke-dasharray="2,2" class="pulse"/>
+    
+    <path d="M250 100 Q 275 70, 275 100 T 300 100" stroke="#8E54E9" stroke-width="1.5" stroke-dasharray="2,2" class="pulse"/>
+    <path d="M250 100 Q 280 100, 280 130 T 300 130" stroke="#8E54E9" stroke-width="1.5" stroke-dasharray="2,2" class="pulse"/>
+    
+    <!-- Volume Control -->
+    <rect x="100" y="150" width="100" height="10" rx="5" fill="#E9EFFF"/>
+    <circle cx="150" cy="155" r="8" fill="white" stroke="#4776E6" stroke-width="1.5"/>
+    
+    <!-- Speaker Icons -->
+    <path d="M70 155 L 80 155 L 90 145 L 90 165 L 80 155 Z" fill="#4776E6"/>
+    <path d="M200 145 Q 210 155, 200 165" stroke="#4776E6" stroke-width="1.5" fill="none"/>
+    <path d="M210 140 Q 225 155, 210 170" stroke="#4776E6" stroke-width="1.5" fill="none"/>
+    
+    <!-- Text Label -->
+    <rect x="100" y="40" width="100" height="20" rx="5" fill="#E9EFFF"/>
+    <text x="115" y="55" font-family="Arial" font-size="12" fill="#4776E6">Play Speech</text>
+</svg> 

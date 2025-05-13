@@ -1,0 +1,56 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        .pulse { animation: pulse 2s ease-in-out infinite; }
+        .typing {
+            animation: typing 3s steps(30, end) infinite;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+    
+    <!-- Text Display -->
+    <rect x="50" y="40" width="200" height="120" rx="10" fill="#F5F8FF" stroke="#4776E6" stroke-width="2"/>
+    
+    <!-- Text Lines -->
+    <rect x="70" y="60" width="160" height="10" rx="5" fill="#E9EFFF"/>
+    <rect x="70" y="80" width="140" height="10" rx="5" fill="#E9EFFF"/>
+    <rect x="70" y="100" width="120" height="10" rx="5" fill="#E9EFFF"/>
+    <rect x="70" y="120" width="150" height="10" rx="5" fill="#E9EFFF"/>
+    
+    <!-- Highlighted Text -->
+    <rect x="70" y="100" width="120" height="10" rx="5" fill="#6A82FB" opacity="0.5" class="pulse"/>
+    
+    <!-- Cursor Indicator -->
+    <rect x="190" y="100" width="2" height="10" fill="#4776E6" class="pulse"/>
+    
+    <!-- Review Checkmark -->
+    <circle cx="240" cy="60" r="15" fill="#E9EFFF" stroke="#4776E6" stroke-width="2"/>
+    <path d="M232 60 L 238 66 L 248 54" stroke="#4776E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- User Interaction -->
+    <rect x="100" y="170" width="100" height="20" rx="10" fill="#4776E6"/>
+    <text x="117" y="184" font-family="Arial" font-size="10" fill="white">Review Text</text>
+    
+    <!-- Processing Indicators -->
+    <circle cx="60" cy="30" r="5" fill="#4776E6"/>
+    <circle cx="75" cy="30" r="5" fill="#6A82FB"/>
+    <circle cx="90" cy="30" r="5" fill="#8E54E9"/>
+    
+    <!-- Connection Lines -->
+    <path d="M120 140 C 120 150, 130 160, 140 160" stroke="#6A82FB" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M180 140 C 180 150, 170 160, 160 160" stroke="#6A82FB" stroke-width="1" stroke-dasharray="2,2"/>
+    
+    <!-- Information Icon -->
+    <circle cx="250" cy="170" r="10" fill="#E9EFFF" stroke="#8E54E9" stroke-width="1.5"/>
+    <rect x="249" y="165" width="2" height="2" fill="#8E54E9"/>
+    <rect x="249" y="169" width="2" height="6" fill="#8E54E9"/>
+</svg> 

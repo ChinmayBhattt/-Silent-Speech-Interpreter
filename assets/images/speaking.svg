@@ -1,0 +1,68 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        @keyframes speak {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-2px); }
+            100% { transform: translateY(0); }
+        }
+        .pulse { animation: pulse 2s ease-in-out infinite; }
+        .speak { animation: speak 1s ease-in-out infinite; }
+        .wave1 { animation: wave 1s ease-in-out infinite; }
+        .wave2 { animation: wave 1s ease-in-out infinite 0.3s; }
+        .wave3 { animation: wave 1s ease-in-out infinite 0.6s; }
+    </style>
+    
+    <!-- Face Outline -->
+    <circle cx="150" cy="100" r="60" fill="#F5F8FF" stroke="#4776E6" stroke-width="2"/>
+    
+    <!-- Eyes -->
+    <circle cx="130" cy="85" r="6" fill="#4776E6"/>
+    <circle cx="170" cy="85" r="6" fill="#4776E6"/>
+    
+    <!-- Mouth Speaking -->
+    <g class="speak">
+        <path d="M130 115 Q 150 135, 170 115" stroke="#8E54E9" stroke-width="3" fill="none"/>
+    </g>
+    
+    <!-- Speech Visualization -->
+    <path class="wave1" d="M210 85 Q 225 75, 240 85" stroke="#4776E6" stroke-width="2" fill="none"/>
+    <path class="wave2" d="M210 100 Q 230 90, 250 100" stroke="#6A82FB" stroke-width="2" fill="none"/>
+    <path class="wave3" d="M210 115 Q 225 105, 240 115" stroke="#8E54E9" stroke-width="2" fill="none"/>
+    
+    <!-- Language Bubble -->
+    <g class="pulse">
+        <circle cx="250" cy="60" r="25" fill="white" stroke="#4776E6" stroke-width="2"/>
+        <text x="242" y="65" font-family="Arial" font-size="12" fill="#4776E6">ABC</text>
+    </g>
+    
+    <!-- Animation Indicators -->
+    <path d="M200 100 L 210 100" stroke="#4776E6" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="200" cy="100" r="3" fill="#4776E6"/>
+    
+    <!-- Face Details -->
+    <path d="M140 70 L 120 65" stroke="#4776E6" stroke-width="1.5"/>
+    <path d="M160 70 L 180 65" stroke="#4776E6" stroke-width="1.5"/>
+    
+    <!-- Tracking Point -->
+    <circle cx="150" cy="115" r="5" fill="#8E54E9" class="pulse"/>
+    
+    <!-- Instructions Indicators -->
+    <rect x="50" y="160" width="200" height="20" rx="5" fill="#E9EFFF"/>
+    <rect x="55" y="165" width="40" height="10" rx="2" fill="#6A82FB"/>
+    <rect x="105" y="165" width="60" height="10" rx="2" fill="#6A82FB"/>
+    <rect x="175" y="165" width="70" height="10" rx="2" fill="#6A82FB"/>
+    
+    <!-- Technology Indicators -->
+    <path d="M80 40 Q 90 20, 100 40" stroke="#8E54E9" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M200 40 Q 210 20, 220 40" stroke="#8E54E9" stroke-width="1" stroke-dasharray="2,2"/>
+</svg> 
